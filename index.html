@@ -4,62 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yeming Wen</title>
+<!--     <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap' rel='stylesheet' type='text/css'> -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Montserrat:400,700&display=swap' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="seal_icon.png">
     <style>
-        body, td, th, p, a {
-          font-family: 'Lato', sans-serif;
-          font-size: 16px;
-          color: #333;
-          line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-          font-family: 'Montserrat', sans-serif;
+        :root {
+            --text-primary: #333;
+            --text-secondary: #555;
+            --bg-color: #fff;
+            --accent-color: #0056b3;
+            --hover-accent-color: #003d82;
+            --font-primary: 'Lato', sans-serif;
+            --font-secondary: 'Roboto Mono', monospace;
         }
 
         body {
-          max-width: 920px;
-          margin: 20px auto;
-          padding: 0 20px;
-          background: #f9f9f9;
+            font-family: var(--font-primary);
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
         }
 
+/*        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--hover-accent-color);
+        }*/
         a, a:visited {
           color: #1772d0;
+          text-decoration: none;
         }
 
         a:hover, a:focus {
           color: #f09228;
         }
-
         .container {
-          background: #fff;
-          padding: 20px;
-          /*box-shadow: 0 0 10px rgba(0,0,0,0.1);*/
-        }
-
-        header, footer {
-          text-align: center;
-          margin: 20px 0;
-        }
-
-        .profile-photo img {
-          max-width: 180px;
-          border-radius: 90px;
-          border: 3px solid #eee;
+            max-width: 820px;
+            margin: auto;
+            padding: 40px;
         }
 
         .profile {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-top: 20px;
-          gap: 30px;
+            display: grid;
+            grid-template-columns: 150px auto;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            object-fit: cover;
+            /*border: 4px solid var(--accent-color);*/
+        }
+
+        .profile-info h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+
+        .profile-links a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .bio {
+            font-size: 1rem;
+            color: var(--text-secondary);
         }
 
         .publications {
-          margin-top: 40px;
+          margin-top: 0;
         }
 
         .publication h3 {
@@ -71,7 +95,7 @@
         }
 
         .experience {
-          margin-top: 40px;
+          margin-top: 0;
         }
 
         .experience-entry {
@@ -84,39 +108,45 @@
         }
 
         @media (max-width: 768px) {
-          .profile {
-            flex-direction: column;
-            align-items: center;
-          }
+            .profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
 
-          .profile-info {
-            text-align: center;
-          }
+            .profile-photo img {
+                margin: 0 auto 20px;
+            }
 
-          .profile-photo {
-            margin-bottom: 20px;
-          }
+            .profile-info, .profile-links {
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1>Yeming Wen</h1>
-    </header>
-
-    <section class="profile">
+    <div class="profile">
         <div class="profile-photo">
             <img src="ywen.jpg" alt="Yeming Wen">
         </div>
-        <div class="profile-info">
-            <p>I am a computer science PhD student at UT Austin, advised by <a href="https://www.cs.utexas.edu/~swarat/">Prof. Swarat Chaudhuri</a>. My research focuses on building machine learning frameworks to generate code with human-like efficiency. I'm also interested in enhancing the efficient adaptation framework for Large Language Models (LLMs), specifically for code generation tasks. Before joining UT Austin, I was a master student in computer science advised by <a href="https://jimmylba.github.io/"> Prof. Jimmy Ba</a> at University of Toronto. I worked on the development of efficient learning algorithms for deep neural networks. My undergraduate studies were also at the University of Toronto, working with <a href="https://www.cs.toronto.edu/~rgrosse/"> Prof. Roger Grosse</a> on stochastic deep neural networks.</p>
-            <p><a href="mailto:ywen@utexas.edu">Email</a> &nbsp/&nbsp
-               <a href="ywen_cv.pdf">CV</a> &nbsp/&nbsp
-               <a href="https://scholar.google.com/citations?hl=en&user=J2GzNAkAAAAJ">Scholar</a> &nbsp/&nbsp
+        <div>
+            <div class="profile-info">
+                <h1>Yeming Wen</h1>
+                <p>PhD student at University of Texas at Austin<br>
+                ywen@utexas.edu</p>
+            </div>
+            <div class="profile-links">
+            <p><a href="mailto:ywen@utexas.edu">Email</a> /&nbsp&nbsp&nbsp
+               <a href="ywen_cv.pdf">CV</a> /&nbsp&nbsp&nbsp
+               <a href="https://scholar.google.com/citations?hl=en&user=J2GzNAkAAAAJ">Scholar</a> /&nbsp&nbsp&nbsp
                <a href="https://www.linkedin.com/in/yeming-wen-0480a6a2/">LinkedIn</a></p>
+            </div>
         </div>
-    </section>
+    </div>
+    <div class="bio">
+        <p>I am a 4th year computer science PhD student at UT Austin, advised by <a href="https://www.cs.utexas.edu/~swarat/">Prof. Swarat Chaudhuri</a>. My research focuses on building machine learning frameworks to generate code with human-like efficiency. I'm also interested in enhancing the efficient adaptation framework for Large Language Models (LLMs), specifically for code generation tasks. <br>Before joining UT Austin, I was a master student in computer science advised by <a href="https://jimmylba.github.io/"> Prof. Jimmy Ba</a> at University of Toronto. I worked on the development of efficient learning algorithms for deep neural networks. My undergraduate studies were also at the University of Toronto, working with <a href="https://www.cs.toronto.edu/~rgrosse/"> Prof. Roger Grosse</a> on stochastic deep neural networks.</p>
+    </div>
+
 
 
     <section class="publications">
@@ -126,7 +156,7 @@
                 <h3><a href="https://arxiv.org/pdf/2402.08073.pdf">Grounding Data Science Code Generation with Input-Output Specifications</a></h3>
                 <p><strong>Yeming Wen</strong>, Pengcheng Yin, Kensen Shi, Henryk Michalewski, Swarat Chaudhuri & Alex Polozov <br>
                 <em>Instruction Tuning and Instruction Following Workshop at NeurIPS, 2023</em></p> 
-                <p>We enhance large language models for code generation from natural language prompts with explicit input-output specifications by leveraging synthetic data and utilizing execution-derived feedback, markedly improving alignment with user specifications in data science tasks.</p>
+                <p>We enhance large language models for code generation from natural language prompts with explicit input-output specifications by leveraging synthetic data and utilizing execution-derived feedback.</p>
             </div>
         </div>
         <div class="publication-entry">
@@ -162,7 +192,7 @@
             <div class="publication-content">
                 <h3><a href="https://arxiv.org/pdf/2312.05677.pdf">Batched Low-Rank Adaptation of Foundation Models</a></h3>
                 <p><strong>Yeming Wen</strong> & Swarat Chaudhuri <br>
-                <em>International Conference on Learning Representations (ICLR), 2024, (<span class="spotlight">Oral, 1.2%</span>)</em></p>
+                <em>International Conference on Learning Representations (ICLR), 2024 (<span class="spotlight">Oral, 1.2%</span>)</em></p>
                 <p>FLoRA: batched version of Low-Rank Adaptation (LoRA) for foundation models, enabling efficient, personalized adaptations for diverse tasks, demonstrating its effectiveness across multilingual code generation.</p>
             </div>
         </div>
@@ -187,7 +217,7 @@
             <div class="publication-content">
                 <h3><a href="https://openreview.net/forum?id=yaksQCYcRs">Neural Program Generation Modulo Static Analysis</a></h3>
                 <p>Rohan Mukherjee, <strong>Yeming Wen</strong>, Dipak Chaudhari, Thomas Reps, Swarat Chaudhuri & Chris Jermaine <br>
-                <em>Advances in Neural Information Processing Systems (NeurIPS), 2021, (<span class="spotlight">Spotlight</span>)</em></p>
+                <em>Advances in Neural Information Processing Systems (NeurIPS), 2021 (<span class="spotlight">Spotlight</span>)</em></p>
                 <p>By conditioning on the semantic attributes that are computed on AST nodes by the compiler, our model generates better code snippets such as Java method bodies given their surrounding context.</p>
             </div>
         </div>
@@ -196,7 +226,7 @@
                 <h3><a href="https://arxiv.org/pdf/2010.09875.pdf">Combining Ensembles and Data Augmentation can Harm your Calibration</a></h3>
                 <p><strong>Yeming Wen</strong>, Ghassen Jerfel, Rafael Muller, Michael W. Dusenberry, Jasper Snoek, Balaji Lakshminarayanan & Dustin Tran <br>
                 <em>International Conference on Learning Representations (ICLR), 2021</em></p>
-                <p>By adjusting data augmentation according to calibration, we can exploit both marginalization and invariances.</p>
+                <p>CAMixup: by adjusting data augmentation according to calibration, we can exploit both marginalization and invariances.</p>
             </div>
         </div>
         <div class="publication-entry">
@@ -238,30 +268,29 @@
         <h2>Experience</h2>
         <div class="experience-entry">
             <p>Student Researcher, Google <br>
-            2022.09 - 2023.05 <br>
+            2022.09 - 2023.05, Remote <br>
             Host: Alex Polozov</p>
         </div>
         <div class="experience-entry">
             <p>Ph.D. Resident, Google X, the moonshot factory <br>
-            2022.05 - 2022.08 <br>
+            2022.05 - 2022.08, Mountain View <br>
             Host: Alex Polozov</p>
         </div>
         <div class="experience-entry">
             <p>Research Intern, Google <br>
-            2020.02 - 2020.09 <br>
+            2020.02 - 2020.09, Mountain View <br>
             Host: Dustin Tran</p>
         </div>
         <div class="experience-entry">
             <p>Student Researcher, Google <br>
-            2019.08 - 2019.12 <br>
+            2019.08 - 2019.12, Toronto <br>
             Host: Dustin Tran</p>
         </div>
     </section>
 
     <footer>
         Last Update: Feb, 16th, 2024;<br>
-        Template: <a href='http://people.eecs.berkeley.edu/~pathak/'>this/that</a>,
-                    <a href="http://www.cs.berkeley.edu/~barron/">ce/cette</a>,
+        Template: <a href="http://www.cs.berkeley.edu/~barron/">ce/cette</a>,
                     <a href="http://www.cs.berkeley.edu/~akar/">das/der</a>,
                     <a href="http://www.cs.berkeley.edu/~sgupta/">kono/sono</a> and
                     <a href="http://jeffdonahue.com/">zhege/nage</a>.
