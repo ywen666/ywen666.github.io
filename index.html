@@ -4,116 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yeming Wen</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Montserrat:400,700&display=swap' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="seal_icon.png">
     <style>
         body, td, th, p, a {
           font-family: 'Lato', sans-serif;
           font-size: 16px;
           color: #333;
+          line-height: 1.6;
         }
 
-        /* Increase overall page width */
+        h1, h2, h3 {
+          font-family: 'Montserrat', sans-serif;
+        }
+
         body {
-          max-width: 880px; /* Adjust this value to increase the page width */
-          margin: auto; /* Centers the content */
-        }
-
-        /* If using a table or a specific container for layout, adjust its width as well */
-        table {
-          width: 100%; /* Allows the table to expand up to the body's max-width */
-          max-width: 880px; /* You can adjust this to match the body's max-width or as needed */
-        }
-
-        /* Ensure content within the table cells also respects the new layout */
-        td, th {
-          padding: 10px; /* Adjust padding for better spacing */
+          max-width: 920px;
+          margin: 20px auto;
+          padding: 0 20px;
+          background: #f9f9f9;
         }
 
         a, a:visited {
           color: #1772d0;
-          text-decoration: none;
         }
 
         a:hover, a:focus {
           color: #f09228;
-          text-decoration: underline;
         }
 
         .container {
-          max-width: 880px;
-          margin: auto;
+          background: #fff;
           padding: 20px;
+          /*box-shadow: 0 0 10px rgba(0,0,0,0.1);*/
         }
 
         header, footer {
           text-align: center;
-          padding: 20px 0;
+          margin: 20px 0;
+        }
+
+        .profile-photo img {
+          max-width: 180px;
+          border-radius: 90px;
+          border: 3px solid #eee;
         }
 
         .profile {
           display: flex;
           align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 25px;
-        }
-
-        .profile-info {
-          flex: 1;
-          min-width: 300px;
-        }
-
-        .profile-photo img {
-          max-width: 160px;
-          border-radius: 80px;
+          justify-content: space-between;
+          margin-top: 20px;
+          gap: 30px;
         }
 
         .publications {
-          margin-top: 20px;
-          margin-bottom: 50px;
+          margin-top: 40px;
         }
 
-        .publication {
-          margin-bottom: 30px;
-        }
-
-        .publication img {
-          max-width: 100%;
-          height: auto;
-          margin-bottom: 10px;
-        }
-
-        .publication-entry {
-          display: flex;
-          align-items: stretch; /* Align items to stretch to fill the container */
-          gap: 20px;
-        }
-
-        .publication-image {
-          flex: 0 1 38%; /* Allows the image container to shrink but not grow, with a basis of 20% */
-          display: flex;
-          align-items: center; /* This will vertically center the image within its container */
-        }
-
-        .publication-image img {
-          width: 100%; /* Ensures the image takes the full width of its parent */
-          height: auto; /* Maintains the aspect ratio of the image */
-          object-fit: contain; /* Ensures the image is fully visible, might leave some space if the aspect ratio doesn't match */
-        }
-
-        .publication-content {
-          flex: 1; /* Allows the text content to take the remaining space */
+        .publication h3 {
+          margin-top: 0;
         }
 
         .spotlight {
           color: red;
         }
 
+        footer {
+          font-size: 14px;
+          color: #777;
+        }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
           .profile {
             flex-direction: column;
+            align-items: center;
+          }
+
+          .profile-info {
+            text-align: center;
           }
 
           .profile-photo {
@@ -129,17 +98,18 @@
     </header>
 
     <section class="profile">
+        <div class="profile-photo">
+            <img src="ywen.jpg" alt="Yeming Wen">
+        </div>
         <div class="profile-info">
-            <p>I am a computer science PhD at UT Austin, advised by <a href="https://www.cs.utexas.edu/~swarat/">Prof. Swarat Chaudhuri</a>. My research focuses on building a machine learning framework to generate code with human-like efficiency. In the meantime, I'm also interested in enhancing the efficient adaptation framework for Large Language Models (LLMs), specifically for code generation tasks. Before joining UT Austin, I was a master student in computer science advised by <a href="https://jimmylba.github.io/"> Prof. Jimmy Ba</a> at University of Toronto. I worked on the development of efficient learning algorithms for deep neural networks. My undergraduate studies were also at the University of Toronto, working with <a href="https://www.cs.toronto.edu/~rgrosse/"> Prof. Roger Grosse</a> on stochastic deep neural networks.</p>
+            <p>I am a computer science PhD student at UT Austin, advised by <a href="https://www.cs.utexas.edu/~swarat/">Prof. Swarat Chaudhuri</a>. My research focuses on building machine learning frameworks to generate code with human-like efficiency. I'm also interested in enhancing the efficient adaptation framework for Large Language Models (LLMs), specifically for code generation tasks. Before joining UT Austin, I was a master student in computer science advised by <a href="https://jimmylba.github.io/"> Prof. Jimmy Ba</a> at University of Toronto. I worked on the development of efficient learning algorithms for deep neural networks. My undergraduate studies were also at the University of Toronto, working with <a href="https://www.cs.toronto.edu/~rgrosse/"> Prof. Roger Grosse</a> on stochastic deep neural networks.</p>
             <p><a href="mailto:ywen@utexas.edu">Email</a> &nbsp/&nbsp
                <a href="ywen_cv.pdf">CV</a> &nbsp/&nbsp
                <a href="https://scholar.google.ca/citations?user=J2GzNAkAAAAJ&hl=en">Scholar</a> &nbsp/&nbsp
                <a href="https://www.linkedin.com/in/yeming-wen-0480a6a2/">LinkedIn</a></p>
         </div>
-        <div class="profile-photo">
-            <img src="ywen.jpg" alt="Yeming Wen">
-        </div>
     </section>
+
 
     <section class="publications">
         <h2>Preprints</h2>
@@ -257,7 +227,6 @@
 
     </section>
 
-
     <footer>
         Last Update: Feb, 16th, 2024;<br>
         Template: <a href='http://people.eecs.berkeley.edu/~pathak/'>this/that</a>,
@@ -268,4 +237,4 @@
     </footer>
 </div>
 </body>
-</html
+</html>
